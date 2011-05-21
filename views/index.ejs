@@ -7,7 +7,7 @@
   <section id="editable_container">
       <ol id="editable" contenteditable=true>
       <% for(var i=0; i<list.items.length; i++) { %>
-              <li class="<% list.items[i].urgent ? 'urgent' : '' %>">
+              <li class="<% if(list.items[i].urgent) { %>urgent<% } %>">
                   <%= list.items[i].task.replace(/^\s+|\s+$/g,"") %>
               </li>
           <% } %>
