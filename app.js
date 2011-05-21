@@ -31,25 +31,17 @@ app.configure('production', function(){
 // Routes
 app.get('/', function(req, res){
   // Check timestamp to see if we need to reopen file.
-  
   if(fileHasBeenModified)
   {
     ticklist = JSON.parse( getDataFromFile('ticklist.json') ) 
-    res.render('index.ejs', {
-      title: 'Tick',
-      list: ticklist
-    });
   }
-  else{
-    res.render('index.ejs', {
-      title: 'Tick',
-      list: ticklist
-    });
-  }
+  res.render('index.ejs', {
+    title: 'Tick',
+    list: ticklist
+  });
   
 });
-
-
+ 
 app.post('/save', function(req, res){
   // Write to file.
   //console.log(sys.inspect(req.headers))
@@ -57,8 +49,11 @@ app.post('/save', function(req, res){
   
   var postList = req.body;
   console.log(postList)
+  
+  writeToFile('ticklist.json', postList);
+  
   var jsun = {};
-	jsun.message = "Nice."
+	jsun.message = "Ticks saved."
 	jsun.code = 200;
 	res.contentType('application/json');
 	res.send(JSON.stringify(jsun), 200);
@@ -72,18 +67,29 @@ function watchFile(filename){
   fs.watchFile(__dirname + '/public/' + filename, function (curr, prev) {
 
     fileHasBeenModified = (curr.mtime > prev.mtime) ? true : false;
-    console.log('the current mtime is: ' + curr.mtime);
-    console.log('the previous mtime was: ' + prev.mtime);
+    
+    console.log("Has the file been modified: " + fileHasBeenModified)
+    // console.log('the current mtime is: ' + curr.mtime);
+    // console.log('the previous mtime was: ' + prev.mtime);
   });
 }
 
+var deleteme = {"items":[{"task": "Bathe Mack.", "urgent": false},{"task": "Finish RFPs.", "urgent": true}]}
+
+
 function getDataFromFile(filename){
   return fs.readFileSync(__dirname + "/public/" + filename, 'utf8')
+}
+
+function writeToFile(filename, data)
+{
+  fs.writeFileSync(__dirname + "/public/" + filename, JSON.stringify(data), 'utf8')
 }
 
 // Only listen on $ node app.js
 
 if (!module.parent) {
   app.listen(3300);
+  watchFile('ticklist.json')
   console.log("Express server listening on port %d", app.address().port);
 }
