@@ -1,0 +1,29 @@
+body {
+  font: 100% "Cousine", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+#container {
+  width: 580px;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+ol {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+ol:focus {
+  outline: 0;
+}
+#editable_container {
+  padding: 10px;
+}
+#editable_container:hover,
+#editable_container:hover {
+  outline: dotted 1px #999;
+}
+.urgent {
+  color: #f00;
+}
