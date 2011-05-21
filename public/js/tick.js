@@ -40,15 +40,14 @@
     postList.items.forEach(function(el,i){
       if(el.task !== runningList.items[i]) changes = true;
 
-      var match = el.task.match(/\*/g)
-        , currentItem = allItems[i];
+      var currentItem = allItems[i];
 
-      if( match && match.length == 1 )  
+      if( /^[^*]+[*]{1}[^*]*$/.test(el.task) )  
       {
         currentItem.removeAttribute('data-urgent')
         currentItem.innerText = currentItem.innerText.replace('*', '')
       }
-      else if( (match && match.length == 2) || (currentItem['data-urgent'] !== undefined))
+      else if( /^[^*]+[*]{2}[^*]*$/.test(el.task) || (currentItem['data-urgent'] !== undefined))
       {
         var attr = d.createAttribute('data-urgent');
         attr.nodeValue = 'true';
