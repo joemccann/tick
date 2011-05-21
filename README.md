@@ -20,10 +20,8 @@ You need the following:
 * Node 0.4.7
 * Express 2.3.4
 
-Clone the repo
-
-<code>git clone https://joemccann@github.com/joemccann/tick.git</code>
-
+Clone the repo. Duh.
+ 
 Fire up the Express app 
 
 <code>node tick/server/app.js</code>
