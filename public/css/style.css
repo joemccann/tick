@@ -24,6 +24,6 @@ ol:focus {
 #editable_container:hover {
   outline: dotted 1px #999;
 }
-.urgent {
+[data-urgent] {
   color: #f00;
 }

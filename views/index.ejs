@@ -1,13 +1,14 @@
 <div id="container">
   <h1><%= title %></h1>
-  <h2Go ahead, edit away!</h2>
-  <p>Add ticks by pressing Enter</p>
-  <p>Save by by pressing Tab</p>
+  <p>Add ticks by pressing Enter.</p>
+  <p>Save by by pressing Tab.</p>
+  <p>Make urgent by adding "**" to your Tick.</p>
+  <p>Remove urgent state by adding "*" to your Tick.</p>
 
   <section id="editable_container">
       <ol id="editable" contenteditable=true>
       <% for(var i=0; i<list.items.length; i++) { %>
-              <li class="<% if(list.items[i].urgent) { %>urgent<% } %>">
+              <li <% if(list.items[i].urgent) { %>data-urgent='true'<% } %>>
                   <%= list.items[i].task.replace(/^\s+|\s+$/g,"") %>
               </li>
           <% } %>

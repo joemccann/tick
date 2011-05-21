@@ -1,4 +1,24 @@
 Tick
 ==========================
 
-Tick if Markdown-compliant Todo list app.
+Tick is a todo list app running on [Express](http://expressjs.com) and uses a custom version of [Reqwest](http://github.com/ded/reqwest) in the browser for XHR.
+
+It writes your "ticks" (todo list items) to a JSON file that is stored on your server.
+
+
+**NOTE**
+
+I'm only currently supporting Chrome (and I believe Safari works) as this is just a personal project that I'm actually using. 
+
+If you want to fork and change it to support other browsers, I'll gladly take pull requests.
+
+
+TODO
+----------------------------
+
+* Add offline support
+* Check for no items in list and change UI to reflect that.
+* Style this fucking thing.  
+* Bundle it like a Titanium Desktop app?
+* Host it?
+* Add support for user accounts?
