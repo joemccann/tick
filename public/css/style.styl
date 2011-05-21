@@ -2,26 +2,34 @@ body
   font 100% 'Cousine', Helvetica, Arial, sans-serif
 a
   color #00B7FF
-#container{
-  width:580px;
-  padding:20px 40px;
-  margin:0 auto;
-}
-
-ol{
+h1
+  font-size:2.2em;
+  letter-spacing:1px;
+  padding:0;
+  margin:0;
+ol
   padding: 0;
   margin: 0;
   list-style-position: inside;
-}
-
-ol:focus{outline:0;}
-
-#editable_container{padding:10px;}
-
-#editable_container:hover, #editable_container:hover{
+ol:focus
+    outline:0;
+p
+  padding-left:4px;
+code
+  font-size:1.4em;
+#container
+    width:580px;
+    padding:20px 40px;
+    margin:0 auto;
+#editable_container
+  padding:10px;
+#editable_container:hover, #editable_container:hover
   outline: dotted 1px #999;
-}
-
-[data-urgent]{
+.red, [data-urgent]{
   color:red;
+}
+.keys{
+  font-family:Courier New, serif;
+  font-size:1.1em;
+  font-weight:bold;
 }

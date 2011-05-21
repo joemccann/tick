@@ -12,6 +12,24 @@ I'm only currently supporting Chrome (and I believe Safari works) as this is jus
 
 If you want to fork and change it to support other browsers, I'll gladly take pull requests.
 
+USAGE
+----------------------------
+
+You need the following:
+
+* Node 0.4.7
+* Express 2.3.4
+
+Clone the repo
+
+<code>git clone https://joemccann@github.com/joemccann/tick.git</code>
+
+Fire up the Express app 
+
+<code>node tick/server/app.js</code>
+
+and navigate to [127.0.0.1:3300](127.0.0.1:3300) in your browser.
+
 
 TODO
 ----------------------------

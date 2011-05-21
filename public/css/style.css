@@ -4,10 +4,11 @@ body {
 a {
   color: #00b7ff;
 }
-#container {
-  width: 580px;
-  padding: 20px 40px;
-  margin: 0 auto;
+h1 {
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  padding: 0;
+  margin: 0;
 }
 ol {
   padding: 0;
@@ -17,6 +18,17 @@ ol {
 ol:focus {
   outline: 0;
 }
+p {
+  padding-left: 4px;
+}
+code {
+  font-size: 1.4em;
+}
+#container {
+  width: 580px;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
 #editable_container {
   padding: 10px;
 }
@@ -24,6 +36,12 @@ ol:focus {
 #editable_container:hover {
   outline: dotted 1px #999;
 }
+.red,
 [data-urgent] {
   color: #f00;
+}
+.keys {
+  font-family: Courier New, serif;
+  font-size: 1.1em;
+  font-weight: bold;
 }
