@@ -2,17 +2,16 @@ var express = require('express')
   , fs = require('fs')
   , sys = require('util')
 
-var app = express.createServer();
-
-  var debug = true
-    , fileHasBeenModified = true
-    , ticklist
-    , app = module.exports = express.createServer();
+var app = express.createServer()
+  , debug = false
+  , fileHasBeenModified = true
+  , ticklist
 
 // Configuration
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
+  app.set('env', debug ? 'development' : 'production');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(require('stylus').middleware({ src: __dirname + '/public' }));
@@ -43,14 +42,9 @@ app.get('/', function(req, res){
 });
  
 app.post('/save', function(req, res){
-  // Write to file.
-  //console.log(sys.inspect(req.headers))
-  //console.log(sys.inspect(req.body))
   
-  var postList = req.body;
-  console.log(postList)
-  
-  writeToFile('ticklist.json', postList);
+  // haha no error checking!
+  writeToFile('ticklist.json', req.body);
   
   var jsun = {};
 	jsun.message = "Ticks saved."
@@ -73,9 +67,6 @@ function watchFile(filename){
     // console.log('the previous mtime was: ' + prev.mtime);
   });
 }
-
-var deleteme = {"items":[{"task": "Bathe Mack.", "urgent": false},{"task": "Finish RFPs.", "urgent": true}]}
-
 
 function getDataFromFile(filename){
   return fs.readFileSync(__dirname + "/public/" + filename, 'utf8')
