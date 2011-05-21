@@ -1,2 +1,14 @@
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<h1>Tick</h1>
+<h2Go ahead, edit away!</h2>
+<p>Add ticks by pressing Enter</p>
+<p>Save by by pressing Tab</p>
+
+<section>
+    <ol id="editable" contenteditable=true>
+    <% for(var i=0; i<list.items.length; i++) { %>
+            <li class="<% list.items[i].urgent %>urgent">
+                <%= list.items[i].task %>
+            </li>
+        <% } %>
+    </ol>
+</section>
