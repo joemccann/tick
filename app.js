@@ -15,6 +15,7 @@ app.configure(function(){
   app.use(require('stylus').middleware({ src: __dirname + '/public' }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.favicon(__dirname + '/public/favicon.ico')  
   app.set('view options', { layout: false });
 });
 
@@ -68,9 +69,6 @@ function watchFile(filename){
     // console.log('the previous mtime was: ' + prev.mtime);
   });
 }
-
-var deleteme = {"items":[{"task": "Bathe Mack.", "urgent": false},{"task": "Finish RFPs.", "urgent": true}]};
-
 
 function getDataFromFile(filename) {
   return fs.readFileSync(__dirname + "/public/" + filename, 'utf8')

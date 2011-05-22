@@ -1,9 +1,12 @@
 body {
   font: 100% "Cousine", Helvetica, Arial, sans-serif;
-  background: #7fb2f0;
-}
-a {
-  color: #00b7ff;
+  color: #000;
+  background: #374a8e url("") no-repeat scroll top left;
+  background-image: -moz-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#79aae8), to(#374a8e), color-stop(41%, #5d81c2), color-stop(87%, #3c5296));
+  background-image: -webkit-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
+  background-image: -o-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
+  background-image: linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
 }
 h1 {
   font-size: 2.2em;
