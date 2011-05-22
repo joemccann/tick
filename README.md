@@ -35,6 +35,7 @@ TODO
 * Add offline support
 * Check for no items in list and change UI to reflect that.
 * Style this fucking thing.  
+* Generate PDF?
 * Bundle it like a Titanium Desktop app?
 * Host it?
 * Add support for user accounts?
