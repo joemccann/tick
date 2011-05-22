@@ -19,6 +19,7 @@ You need the following:
 
 * Node 0.4.7
 * Express 2.3.4
+* EJS (templating engine used)
 
 Clone the repo. Duh.
  
