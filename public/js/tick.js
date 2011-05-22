@@ -47,7 +47,7 @@
         currentItem.removeAttribute('data-urgent')
         currentItem.innerText = currentItem.innerText.replace('*', '')
       }
-      else if( /^[^*]+[*]{2}[^*]*$/.test(el.task) || (currentItem['data-urgent'] !== undefined))
+      else if( currentItem.hasAttribute('data-urgent') || ( /^[^*]+[*]{2}[^*]*$/.test(el.task) ) )
       {
         var attr = d.createAttribute('data-urgent');
         attr.nodeValue = 'true';
