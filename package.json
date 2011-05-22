@@ -1,0 +1,16 @@
+{
+  "name" : "tick",
+  "description" : "",
+  "version" : "0.0.1",
+  "author" : "Joe McCann",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/joemccann/tick"
+  },
+  "bin" : "./app.js",
+  "dependencies" : {
+    "ejs" : "~0.4",
+    "express" : "~2.3",
+    "stylus" : "~0.13"
+  }
+}

@@ -1,12 +1,16 @@
 body
   font 100% 'Cousine', Helvetica, Arial, sans-serif
+  background: #7FB2F0
 a
   color #00B7FF
 h1
   font-size:2.2em;
   letter-spacing:1px;
-  padding:0;
+  line-height: 60px;
+  padding: 10px 0 0 80px;
   margin:0;
+  background: url("tick.png") no-repeat 0 50%;
+  color: #35478c;
 ol
   padding: 0;
   margin: 0;
@@ -18,13 +22,50 @@ p
 code
   font-size:1.4em;
 #container
-    width:580px;
-    padding:20px 40px;
-    margin:0 auto;
+  position: relative;
+  width:580px;
+  padding: 20px 30px;
+  margin: 2em auto;
+  background: #F3F3F3;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+
+#container:before,#container:after
+  content: "";
+  position: absolute;
+  z-index: -2;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  height: 20%;
+  max-width: 300px;
+  -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+#container:after {
+  right: 10px;
+  left: auto;
+  -webkit-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
 #editable_container
-  padding:10px;
-#editable_container:hover, #editable_container:hover
-  outline: dotted 1px #999;
+  margin: 1em 0 2em 0;
+  background: #FCFCFC;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: inset -1px -1px 4px #999;
+  box-shadow: inset -1px -1px 4px #999;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+#editable_container:hover
+  -webkit-box-shadow: inset -1px -1px 7px #999;
+  -moz-box-shadow: inset -1px -1px 7px #999;
+  box-shadow: inset -1px -1px 7px #999;
+  background: #FFF;
 .red, [data-urgent]{
   color:red;
 }
