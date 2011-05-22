@@ -4,31 +4,31 @@ var express = require('express')
   var debug = true
     , fileHasBeenModified = true
     , ticklist
-    , app = module.exports = express.createServer();
+    , tick = module.exports = express.createServer();
 
 // Configuration
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'ejs');
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(require('stylus').middleware({ src: __dirname + '/public' }));
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-  app.favicon(__dirname + '/public/favicon.ico')  
-  app.set('view options', { layout: false });
+tick.configure(function(){
+  tick.set('views', __dirname + '/views');
+  tick.set('view engine', 'ejs');
+  tick.use(express.bodyParser());
+  tick.use(express.methodOverride());
+  tick.use(require('stylus').middleware({ src: __dirname + '/public' }));
+  tick.use(tick.router);
+  tick.use(express.static(__dirname + '/public'));
+  tick.use(express.favicon(__dirname + '/public/favicon.ico'))  
+  tick.set('view options', { layout: false });
 });
 
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+tick.configure('development', function(){
+  tick.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
-app.configure('production', function(){
-  app.use(express.errorHandler()); 
+tick.configure('production', function(){
+  tick.use(express.errorHandler()); 
 });
 
 // Routes
-app.get('/', function(req, res) {
+tick.get('/', function(req, res) {
   // Check timestamp to see if we need to reopen file.
   if(fileHasBeenModified) {
     ticklist = JSON.parse(getDataFromFile('ticklist.json'));
@@ -38,13 +38,13 @@ app.get('/', function(req, res) {
   });
 });
  
-app.post('/save', function(req, res){
+tick.post('/save', function(req, res){
   // Write to file.
   //console.log(sys.inspect(req.headers))
   //console.log(sys.inspect(req.body))
   
   var postList = req.body;
-  console.log(postList);
+  //console.log(postList);
   
   writeToFile('ticklist.json', postList);
   
@@ -79,6 +79,9 @@ function writeToFile(filename, data) {
 }
 
 // Only listen on $ node app.js
+
+var app = express.createServer();
+app.use(express.vhost('dev', tick));
 
 if (!module.parent) {
   app.listen(3300);
