@@ -1,17 +1,29 @@
-<div id="container">
-  <h1><%= title %></h1>
-  <p>Add ticks by pressing <span class="keys">Enter<span>.</p>
-  <p>Save ticks by pressing <span class="keys">Tab</span>.</p>
-  <p>Make urgent by adding <span class="red">**</span> to your Tick.</p>
-  <p>Remove urgent state by adding <span class="red">*</span> to your Tick.</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tick</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="http://fonts.googleapis.com/css?family=Cousine:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+  </head>
+  <body class="tick">
+    <div id="container">
+      <h1>Tick</h1>
+      <p>Add ticks by pressing <span class="keys">Enter<span>.</p>
+      <p>Save ticks by pressing <span class="keys">Tab</span>.</p>
+      <p>Make urgent by adding <span class="red">**</span> to your Tick.</p>
+      <p>Remove urgent state by adding <span class="red">*</span> to your Tick.</p>
 
-  <section id="editable_container">
-      <ol id="editable" contenteditable=true>
-      <% for(var i=0; i<list.items.length; i++) { %>
-              <li <% if(list.items[i].urgent) { %>data-urgent='true'<% } %>>
-                  <%= list.items[i].task.replace(/^\s+|\s+$/g,"") %>
-              </li>
-          <% } %>
-      </ol>
-  </section>
-</div>
+      <section id="editable_container">
+          <ol id="editable" contenteditable=true>
+          <% for(var i=0; i<list.items.length; i++) { %>
+                  <li <% if(list.items[i].urgent) { %>data-urgent='true'<% } %>>
+                      <%= list.items[i].task.replace(/^\s+|\s+$/g,"") %>
+                  </li>
+              <% } %>
+          </ol>
+      </section>
+    </div>
+    <script type="text/javascript" src="/js/reqwest.js"></script>
+    <script type="text/javascript" src="/js/tick.js"></script>
+  </body>
+</html>
