@@ -1,13 +1,20 @@
 !function(d,w){
-  var runningList = { items: [] }
-    , $legend = d.getElementById('legend');
   
-  d.getElementById('editable').addEventListener('blur',saveList,false)
+  var runningList = { items: [] }
+    , $editable = d.getElementById('editable')
+    , $legend = d.getElementById('legend')
+    , isEditableFocused = false;
 
+  /*
+   * @desc Factory method to create an AttributeNode to be added to a DOM element.
+   * @param String  The name of the attribute.
+   * @param String|Boolean  The value to set, if passed. (optional)
+   * @return AttributeNode
+   */
   function attributeFactory(name, value)
   {
     var attr = d.createAttribute(name);
-    attr.nodeValue = value;
+    value && (attr.nodeValue = value);
     return attr;
   }
 
@@ -29,6 +36,8 @@
    */
   function saveList()
   {
+    isEditableFocused = false;
+    
     var allItems = Array.prototype.slice.call(d.querySelectorAll('#editable > li'))
       , changes = false
       , ws = /^\s|\t|\n$/
@@ -94,7 +103,10 @@
     
   }
   
-  setRunningList();
+  // Wire up events.
+  
+  $editable.addEventListener('blur',saveList,false)
+  $editable.addEventListener('focus', function(){ isEditableFocused = true},false);
   
   $legend.addEventListener('webkitAnimationEnd', function(){
     var goingUp = (this.hasAttribute('data-slide-up') || this.className == 'slide_initial') ? true : false; 
@@ -111,15 +123,19 @@
     }
   });
   
-  document.addEventListener('keyup', function(e){
+  d.addEventListener('keyup', function(e){
+    // If someone is writing a Tick, let the type the question mark without triggering the animation.
+    if(isEditableFocused) return;
     if(e.keyCode == 191)
     {
-      
       $legend
         .setAttributeNode( attributeFactory( ($legend.style.height === "0px") 
           ? 'data-slide-down' 
           : 'data-slide-up', true) )
     }    
   }, false)
+  
+  // Initialize, basically...
+  setRunningList();
   
 }(document,window)
