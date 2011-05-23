@@ -3,7 +3,7 @@ Tick
 
 Tick is a todo list app running on [Express](http://expressjs.com) and uses a custom version of [Reqwest](http://github.com/ded/reqwest) in the browser for XHR.
 
-It writes your "ticks" (todo list items) to a JSON file that is stored on your server.
+It writes your "Ticks" (todo list items) to a JSON file that is stored on your server.
 
 
 **NOTE**
@@ -12,7 +12,8 @@ I'm only currently supporting Chrome (and I believe Safari works) as this is jus
 
 If you want to fork and change it to support other browsers, I'll gladly take pull requests.
 
-USAGE
+
+INSTALLATION
 ----------------------------
 
 You need the following:
@@ -27,7 +28,15 @@ Fire up the Express app
 
 <code>node tick/server/app.js</code>
 
-and navigate to [127.0.0.1:3300](127.0.0.1:3300) in your browser.
+and navigate to [http://dev:3300](http://dev:3300) in your browser (a virtual host is setup)
+
+
+USAGE
+---------------------------
+
+* Add new ticks by pressing ENTER.
+* Save ticks by pressing TAB.
+* Press the question mark key - ? - to toggle the legend (it will slide up after 5 seconds).
 
 
 TODO
@@ -35,7 +44,6 @@ TODO
 
 * Add offline support
 * Check for no items in list and change UI to reflect that.
-* Style this fucking thing.  
 * Generate PDF?
 * Bundle it like a Titanium Desktop app?
 * Host it?
