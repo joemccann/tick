@@ -44,7 +44,9 @@ TODO
 
 * Add offline support
 * Check for no items in list and change UI to reflect that.
+* Create modal/notification that says "Type question mark to reveal usage info."  Add an option (cookie) to never show again.
 * Generate PDF?
 * Bundle it like a Titanium Desktop app?
 * Host it?
-* Add support for user accounts?
+* Add support for user accounts?  Sign in with Github account.
+* Allow for creation of vanity URLs.  (http://some.domain.for.tick.com/joemccann)
