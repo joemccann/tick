@@ -1,7 +1,15 @@
 !function(d,w){
-  var runningList = { items: [] };
+  var runningList = { items: [] }
+    , $legend = d.getElementById('legend');
   
   d.getElementById('editable').addEventListener('blur',saveList,false)
+
+  function attributeFactory(name, value)
+  {
+    var attr = d.createAttribute(name);
+    attr.nodeValue = value;
+    return attr;
+  }
 
   /*
    * @desc Method to place all tasks' text values in an array that we can use later for comparison.
@@ -49,9 +57,7 @@
       }
       else if( currentItem.hasAttribute('data-urgent') || ( /^[^*]+[*]{2}[^*]*$/.test(el.task) ) )
       {
-        var attr = d.createAttribute('data-urgent');
-        attr.nodeValue = 'true';
-        currentItem.setAttributeNode(attr);
+        currentItem.setAttributeNode( attributeFactory('data-urgent'), true)
         currentItem.innerText = currentItem.innerText.replace('**', '')
         el.urgent = true;
       }
@@ -89,5 +95,31 @@
   }
   
   setRunningList();
+  
+  $legend.addEventListener('webkitAnimationEnd', function(){
+    var goingUp = (this.hasAttribute('data-slide-up') || this.className == 'slide_initial') ? true : false; 
+
+    this.className = "";
+
+    if(goingUp){
+      this.style.height = "0px";
+      this.removeAttribute('data-slide-up')
+    }
+    else{
+      this.style.height = "156px";
+      this.removeAttribute('data-slide-down')
+    }
+  });
+  
+  document.addEventListener('keyup', function(e){
+    if(e.keyCode == 191)
+    {
+      
+      $legend
+        .setAttributeNode( attributeFactory( ($legend.style.height === "0px") 
+          ? 'data-slide-down' 
+          : 'data-slide-up', true) )
+    }    
+  }, false)
   
 }(document,window)
