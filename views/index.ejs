@@ -8,11 +8,12 @@
   <body class="tick">
     <div id="container">
       <h1>Tick</h1>
-      <p>Add ticks by pressing <span class="keys">Enter<span>.</p>
-      <p>Save ticks by pressing <span class="keys">Tab</span>.</p>
-      <p>Make urgent by adding <span class="red">**</span> to your Tick.</p>
-      <p>Remove urgent state by adding <span class="red">*</span> to your Tick.</p>
-
+      <section id="legend" class="slide_initial">
+        <p>Add Ticks by pressing <span class="keys">Enter<span>.</p>
+        <p>Save Ticks by pressing <span class="keys">Tab</span>.</p>
+        <p>Make urgent by adding <span class="red">**</span> to your Tick.</p>
+        <p>Remove urgent state by adding <span class="red">*</span> to your Tick.</p>
+      </section>
       <section id="editable_container">
           <ol id="editable" contenteditable=true>
           <% for(var i=0; i<list.items.length; i++) { %>
