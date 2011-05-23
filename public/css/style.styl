@@ -78,3 +78,31 @@ code
   font-size:1.1em;
   font-weight:bold;
 }
+
+#legend
+  overflow hidden
+
+@keyframes slide_up
+  from
+    height 156px
+  to
+    height 0px
+
+@keyframes slide_down
+  from
+    height 0px
+  to
+    height 156px
+
+.slide_initial{
+  -webkit-animation: slide_up 1s 5s 1 normal linear  
+}
+
+[data-slide-up]
+ -webkit-animation: slide_up 1s 0s 1 normal linear
+
+[data-slide-down]
+ -webkit-animation: slide_down 1s 0s 1 normal linear
+
+
+

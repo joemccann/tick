@@ -89,3 +89,33 @@ code {
   font-size: 1.1em;
   font-weight: bold;
 }
+#legend {
+  overflow: hidden;
+}
+@-webkit-keyframes slide_up {
+  0% {
+    height: 156px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+@-webkit-keyframes slide_down {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 156px;
+  }
+}
+.slide_initial {
+  -webkit-animation: slide_up 1s 5s 1 normal linear;
+}
+[data-slide-up] {
+  -webkit-animation: slide_up 1s 0s 1 normal linear;
+}
+[data-slide-down] {
+  -webkit-animation: slide_down 1s 0s 1 normal linear;
+}
