@@ -2,82 +2,82 @@ body
   font 100% 'Cousine', Helvetica, Arial, sans-serif
   color #000
   background #374a8e url() no-repeat scroll top left
-  background-image: -moz-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#79aae8), to(#374a8e), color-stop(41%, #5d81c2), color-stop(87%, #3c5296));
-  background-image: -webkit-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
-  background-image: -o-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
-  background-image: linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e);
+  background-image: -moz-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e)
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#79aae8), to(#374a8e), color-stop(41%, #5d81c2), color-stop(87%, #3c5296))
+  background-image: -webkit-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e)
+  background-image: -o-linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e)
+  background-image: linear-gradient(top, #79aae8, #5d81c2 41%, #3c5296 87%, #374a8e)
 h1
-  font-size:2.2em;
-  letter-spacing:1px;
-  line-height: 60px;
-  padding: 10px 0 0 80px;
-  margin:0;
-  background: url("tick.png") no-repeat 0 50%;
-  color: #35478c;
+  font-size 2.2em
+  letter-spacing 1px
+  line-height  60px
+  padding  10px 0 0 80px
+  margin 0
+  background  url("tick.png") no-repeat 0 50%
+  color  #35478c
 ol
-  padding: 0;
-  margin: 0;
-  list-style-position: inside;
+  padding  0
+  margin  0
+  list-style-position inside
 ol:focus
-    outline:0;
+    outline 0
 p
-  padding-left:4px;
-code
-  font-size:1.4em;
+  padding-left 4px
 #container
-  position: relative;
-  width:580px;
-  padding: 20px 30px;
-  margin: 2em auto;
-  background: #F3F3F3;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  position relative
+  width 580px
+  padding 20px 30px
+  margin 2em auto
+  background #F3F3F3
+  -webkit-box-shadow 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset
+  box-shadow 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset
+  -webkit-border-radius 6px
+  border-radius 6px
 
 #container:before,#container:after
-  content: "";
-  position: absolute;
-  z-index: -2;
-  bottom: 15px;
-  left: 10px;
-  width: 50%;
-  height: 20%;
-  max-width: 300px;
-  -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-  -webkit-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-#container:after {
-  right: 10px;
-  left: auto;
-  -webkit-transform: rotate(3deg);
-  transform: rotate(3deg);
-}
+  content ""
+  position absolute
+  z-index -2
+  bottom 15px
+  left 10px
+  width 50%
+  height 20%
+  max-width 300px
+  -webkit-box-shadow 0 15px 10px rgba(0, 0, 0, 0.7)
+  box-shadow 0 15px 10px rgba(0, 0, 0, 0.7)
+  -webkit-transform rotate(-3deg)
+  transform rotate(-3deg)
+
+#container:after
+  right 10px
+  left auto
+  -webkit-transform rotate(3deg)
+  transform rotate(3deg)
+
 #editable_container
-  margin: 1em 0 2em 0;
-  background: #FCFCFC;
-  padding: 20px;
-  position: relative;
-  -webkit-box-shadow: inset -1px -1px 4px #999;
-  box-shadow: inset -1px -1px 4px #999;
-  border: 1px solid #CCC;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  margin 1em 0 2em 0
+  background #FCFCFC
+  padding 20px
+  position relative
+  -webkit-box-shadow inset -1px -1px 4px #999
+  box-shadow inset -1px -1px 4px #999
+  border 1px solid #CCC
+  -webkit-border-radius 6px
+  border-radius 6px
+
 #editable_container:hover
-  -webkit-box-shadow: inset -1px -1px 7px #999;
-  -moz-box-shadow: inset -1px -1px 7px #999;
-  box-shadow: inset -1px -1px 7px #999;
-  background: #FFF;
-.red, [data-urgent]{
-  color:red;
-}
-.keys{
-  font-family:Courier New, serif;
-  font-size:1.1em;
-  font-weight:bold;
-}
+  -webkit-box-shadow inset -1px -1px 7px #999
+  -moz-box-shadow inset -1px -1px 7px #999
+  box-shadow inset -1px -1px 7px #999
+  background #FFF
+
+.red, [data-urgent]
+  color red
+
+.keys
+  font-family Courier New, serif
+  font-size 1.1em
+  font-weight bold
 
 #legend
   overflow hidden
@@ -94,15 +94,11 @@ code
   to
     height 156px
 
-.slide_initial{
-  -webkit-animation: slide_up 1s 5s 1 normal linear  
-}
+.slide_initial
+  -webkit-animation slide_up 1s 5s 1 normal linear  
 
 [data-slide-up]
- -webkit-animation: slide_up 1s 0s 1 normal linear
+ -webkit-animation slide_up 1s 0s 1 normal linear
 
 [data-slide-down]
- -webkit-animation: slide_down 1s 0s 1 normal linear
-
-
-
+ -webkit-animation slide_down 1s 0s 1 normal linear
