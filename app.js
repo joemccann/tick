@@ -33,6 +33,7 @@ tick.get('/', function(req, res) {
   if(fileHasBeenModified) {
     ticklist = JSON.parse(getDataFromFile('ticklist.json'));
   }
+  !ticklist.items.length && ticklist.items.push({"task": "Add a new tick!", "urgent": false});
   res.render('index.ejs', {
     list: ticklist
   });
@@ -49,7 +50,7 @@ tick.post('/save', function(req, res){
   writeToFile('ticklist.json', postList);
   
   var jsun = {
-    "message" : "Ticks saved.",
+    "message" : "Tick list successfully updated.",
     "code" : 200
   };
 	res.contentType('application/json');
@@ -87,4 +88,5 @@ if (!module.parent) {
   app.listen(3300);
   watchFile('ticklist.json');
   console.log("Express server listening on port %d", app.address().port);
+  console.log("\n*****************************TICK TOCK TICK TOCK***************************** \n");
 }
